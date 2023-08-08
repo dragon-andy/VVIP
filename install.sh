@@ -227,7 +227,7 @@ clear
 	elif test $dns -eq 2; then
     read -rp "Enter Your Domain / masukan domain : " dom
     read -rp "Input ur ns-domain : " -e nsdomen
-    echo "IP=$dom" > /var/lib/scrz-prem/ipvps.conf
+    echo "IP=$dom" > /var/lib/ssnvpn-pro/ipvps.conf
     echo "$dom" > /root/scdomain
 	echo "$dom" > /etc/xray/scdomain
 	echo "$dom" > /etc/xray/domain
