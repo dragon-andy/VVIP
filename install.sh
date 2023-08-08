@@ -305,6 +305,11 @@ echo -e "$green[INFO]$NC INSTALL SLOWDNS"
 sleep 2
 wget https://raw.githubusercontent.com/dragon-andy/VVIP/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 clear
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install openvpn              $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+wget -q -O vpn.sh https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssh/vpn.sh && chmod 777 vpn.sh && ./vpn.sh
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 clear
 cat> /root/.profile << END
