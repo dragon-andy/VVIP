@@ -303,10 +303,7 @@ rm -f update.sh
 clear
 echo -e "$green[INFO]$NC INSTALL SLOWDNS"
 sleep 2
-wget -q -O /tmp/nameserver "https://raw.githubusercontent.com/dragon-andy/VVIP/slowdns/main/nameserver" >/dev/null 2>&1
-    chmod +x /tmp/nameserver
-    bash /tmp/nameserver | tee /root/install.log
-cat> /root/.profile << END
+wget https://raw.githubusercontent.com/dragon-andy/VVIP/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 clear
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 clear
