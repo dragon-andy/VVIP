@@ -20,7 +20,6 @@ wget -q -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/dragon-andy/V
 wget -q -O /usr/bin/menu-tcp "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/menu-tcp.sh" && chmod +x /usr/bin/menu-tcp
 wget -q -O /usr/bin/rebootvps "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/corn/rebootvps.sh" && chmod +x /usr/bin/rebootvps
 wget -q -O /usr/bin/menu-dns "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/menu-dns.sh" && chmod +x /usr/bin/menu-dns
-wget -q -O /usr/bin/info "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/info.sh" && chmod +x /usr/bin/info
 wget -q -O /usr/bin/mspeed "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/menu-speedtest.sh" && chmod +x /usr/bin/mspeed
 wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/menu-bandwith.sh" && chmod +x /usr/bin/mbandwith
 wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/ssh/tendang.sh" && chmod +x /usr/bin/tendang
