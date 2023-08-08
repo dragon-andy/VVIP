@@ -2,7 +2,7 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-CDNF="https://raw.githubusercontent.com/myridwan/VVIP/ipuk"
+CDNF="https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk"
 ###
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/dragon-andy/permission/main/ip > /root/tmp
