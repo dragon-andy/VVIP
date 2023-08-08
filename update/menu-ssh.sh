@@ -29,8 +29,8 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 function addssh(){
 clear
-dnsdomain=$(cat /etc/xray/dns)
-dnskey=$(cat /etc/slowdns/server.pub)
+sldomain=`cat /etc/xray/dns`
+slkey=$(cat /etc/slowdns/server.pub)
 domen=`cat /etc/xray/domain`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
@@ -129,8 +129,8 @@ echo -e "  Expired On   : $exp"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "  IP           : $IP" 
 echo -e "  Host         : $domen" 
-echo -e "  Host NS      : $dnsdomain" 
-echo -e "  PubKey       : $dnskey"
+echo -e "  Host NS      : $sldomain" 
+echo -e "  PubKey       : $slkey"
 echo -e "  OpenSSH      : $opensh"
 echo -e "  Dropbear     : $db" 
 echo -e "  SSH-WS       : $portsshws, 8880" 
@@ -155,8 +155,8 @@ echo -e "  Expired On   : $exp"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "  IP           : $IP" 
 echo -e "  Host         : $domen" 
-echo -e "  Host NS      : $dnsdomain" 
-echo -e "  PubKey       : $dnskey"
+echo -e "  Host NS      : $sldomain" 
+echo -e "  PubKey       : $slkey"
 echo -e "  OpenSSH      : $opensh"
 echo -e "  Dropbear     : $db" 
 echo -e "  SSH-WS       : $portsshws, 8880" 
@@ -551,8 +551,8 @@ echo -e "  Expired On   : $exp"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "  IP           : $IP" 
 echo -e "  Host         : $domen" 
-echo -e "  Host NS      : $dnsdomain" 
-echo -e "  PubKey       : $dnskey"
+echo -e "  Host NS      : $sldomain" 
+echo -e "  PubKey       : $slkey"
 echo -e "  OpenSSH      : $opensh"
 echo -e "  Dropbear     : $db" 
 echo -e "  SSH-WS       : $portsshws, 8880" 
@@ -579,8 +579,8 @@ echo -e "  Expired On   : $exp"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "  IP           : $IP" 
 echo -e "  Host         : $domen" 
-echo -e "  Host NS      : $dnsdomain" 
-echo -e "  PubKey       : $dnskey"
+echo -e "  Host NS      : $sldomain" 
+echo -e "  PubKey       : $slkey"
 echo -e "  OpenSSH      : $opensh"
 echo -e "  Dropbear     : $db" 
 echo -e "  SSH-WS       : $portsshws, 8880" 
