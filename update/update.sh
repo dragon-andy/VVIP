@@ -23,6 +23,7 @@ wget -q -O /usr/bin/menu-dns "https://raw.githubusercontent.com/dragon-andy/VVIP
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/info.sh" && chmod +x /usr/bin/info
 wget -q -O /usr/bin/mspeed "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/menu-speedtest.sh" && chmod +x /usr/bin/mspeed
 wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/menu-bandwith.sh" && chmod +x /usr/bin/mbandwith
+wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/ssh/tendang.sh" && chmod +x /usr/bin/tendang
 echo -e " [INFO] Update Successfully"
 sleep 2
 rm -f update.sh
