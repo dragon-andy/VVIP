@@ -390,8 +390,8 @@ echo "   - Admin Control" | tee -a log-install.txt
 echo "   - Restore Data" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "   >>> WhatsApp : +6283850135751 (Text Only)"  | tee -a log-install.txt
-echo "   >>> Telegram : t.me/citralinggau"  | tee -a log-install.txt
+echo "   >>> WhatsApp : +6282131861788 (Text Only)"  | tee -a log-install.txt
+echo "   >>> Telegram : t.me/MATAMATA223"  | tee -a log-install.txt
 echo ""
 echo ""
 echo "------------------------------------------------------------"
