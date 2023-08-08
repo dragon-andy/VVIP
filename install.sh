@@ -231,6 +231,8 @@ clear
     echo "$domen" > /root/scdomain
     echo "$domen" > /etc/xray/domain
     echo "$domen" > /etc/xray/scdomain
+    echo "$nsdomen" > /etc/xray/nsdomain
+    echo "$nsdomen" > /root/nsdomain
     echo "IP=$domen" > /var/lib/ssnvpn-pro/ipvps.conf
     cp /root/domain /etc/xray/domain
     else 
