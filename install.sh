@@ -337,7 +337,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/myridwan/multi-ws/ipuk/version  )
+serverV=$( curl -sS https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/version  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -360,7 +360,7 @@ echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
 echo "   - SSH Websocket           : 80" | tee -a log-install.txt
 echo "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
 echo "   - SSH NON-SSL Websocket   : 80, 8880" | tee -a log-install.txt
-echo "   - SLOWDNS                 : 5300 [OFF]" | tee -a log-install.txt
+echo "   - SLOWDNS                 : 5300 [ON]" | tee -a log-install.txt
 echo "   - Stunnel4                : 447, 777" | tee -a log-install.txt
 echo "   - Dropbear                : 109, 143" | tee -a log-install.txt
 echo "   - Badvpn                  : 7100-7900" | tee -a log-install.txt
@@ -404,8 +404,8 @@ rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh 
 rm /root/update.sh
-rm /root/nontls.sh
-rm /root/installsl.sh
+rm -f nontls.sh
+rm -f installsl.sh
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
