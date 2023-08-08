@@ -75,7 +75,7 @@ setup_dnstt() {
 	chmod +x *
 	mv * /etc/slowdns
 	wget -O /etc/systemd/system/client.service "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/slowdns/client" >/dev/null 2>&1
-	wget -O /etc/systemd/system/server.service "https://raw.githubusercontent.com/versi01/Projectdragon-andy/VVIP/ipuk/slowdns/server" >/dev/null 2>&1
+	wget -O /etc/systemd/system/server.service "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/slowdns/server" >/dev/null 2>&1
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/client.service 
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/server.service 
 }
