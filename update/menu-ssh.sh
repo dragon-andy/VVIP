@@ -543,8 +543,8 @@ opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{prin
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
 ssl="$(cat ~/log-install.txt | grep -w "Stunnel4" | cut -d: -f2)"
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
-dnsdomain=$(cat /root/nsdomain)
-dnskey=$(cat /etc/slowdns/server.pub)
+sldomain=`cat /etc/xray/dns`
+slkey=$(cat /etc/slowdns/server.pub)
 
 
 Login=klmpk`</dev/urandom tr -dc X-Z0-9 | head -c4`
