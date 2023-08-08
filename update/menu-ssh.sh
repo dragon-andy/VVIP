@@ -332,7 +332,29 @@ echo "";
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ssh
 }
-
+function ceklim(){
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;41;36m         CEK USER MULTI SSH        \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+if [ -e "/root/log-limit.txt" ]; then
+echo "User Who Violate The Maximum Limit";
+echo "Time - Username - Number of Multilogin"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+cat /root/log-limit.txt
+else
+echo " No user has committed a violation"
+echo " "
+echo " or"
+echo " "
+echo " The user-limit script not been executed."
+fi
+echo " ";
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo " ";
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
 function delssh(){
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -578,6 +600,111 @@ echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ssh
 }
+function autokill(){
+clear
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
+Info="${Green_font_prefix}[ON]${Font_color_suffix}"
+Error="${Red_font_prefix}[OFF]${Font_color_suffix}"
+cek=$(grep -c -E "^# Autokill" /etc/cron.d/tendang)
+if [[ "$cek" = "1" ]]; then
+sts="${Info}"
+else
+sts="${Error}"
+fi
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[44;1;39m             AUTOKILL SSH          \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Status Autokill : $sts        "
+echo -e ""
+echo -e "[1]  AutoKill After 5 Minutes"
+echo -e "[2]  AutoKill After 10 Minutes"
+echo -e "[3]  AutoKill After 15 Minutes"
+echo -e "[4]  Turn Off AutoKill/MultiLogin"
+echo -e "[x]  Menu"
+echo ""
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e ""
+read -p "Select From Options [1-4 or x] :  " AutoKill
+read -p "Multilogin Maximum Number Of Allowed: " max
+echo -e ""
+case $AutoKill in
+1)
+echo -e ""
+sleep 1
+clear
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/5 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 5 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+;;
+2)
+echo -e ""
+sleep 1
+clear
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/10 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 10 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+;;
+3)
+echo -e ""
+sleep 1
+clear
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/15 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 15 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+;;
+4)
+rm -fr /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      AutoKill MultiLogin Turned Off"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+;;
+x)
+menu
+;;
+*)
+echo "Please enter an correct number"
+;;
+esac
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " \e[1;97;101m            MENU MANAGER SSH           \E[0m"
@@ -589,7 +716,9 @@ echo -e "\033[1;93m〔⎆〕 ${grenbo}4.${NC} \033[0;36mEnable Ws SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}5.${NC} \033[0;36mDelete SSH Account${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}6.${NC} \033[0;36mRenew SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}7.${NC} \033[0;36mCek Member SSH${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}8.${NC} \033[0;36mGo Back Menu${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}8.${NC} \033[0;36mMullog SSH ${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}9.${NC} \033[0;36mAuto Kill user SSH ${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}10.${NC} \033[0;36mGo Back Menu${NC}"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -p " Select menu :  "  opt
@@ -602,7 +731,9 @@ case $opt in
 05 | 5) clear ; delssh ;;
 06 | 6) clear ; renewssh ;;
 07 | 7) clear ; memberssh ;;
-08 | 8) clear ; menu ;;
+08 | 8) clear ; ceklim ;;
+09 | 9) clear ; autokill ;;
+10 | 10) clear ; menu ;;
 *) clear ; menu-ssh ;;
 esac
 
