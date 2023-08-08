@@ -1,13 +1,13 @@
 #!/bin/bash
 # =========================================
 BOT="https://raw.githubusercontent.com/myridwan/src/ipuk/"
-UPDATE="https://raw.githubusercontent.com/myridwan/VVIP/ipuk/update/update.sh"
+UPDATE="https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/update.sh"
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/myridwan/izinvps/ipuk/ip"
+data_ip="https://raw.githubusercontent.com/dragon-andy/permission/main/ip"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -21,8 +21,8 @@ checking_sc() {
     echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
     echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
     echo -e "             \033[0;33mContact Admin :${NC}"
-    echo -e "      \033[0;36mTelegram${NC} t.me/Kytxz"
-    echo -e "      ${GREEN}WhatsApp${NC} wa.me/6281774970898"
+    echo -e "      \033[0;36mTelegram${NC} t.me/matamata233"
+    echo -e "      ${GREEN}WhatsApp${NC} wa.me/6282131861788"
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
     exit
   fi
@@ -33,11 +33,11 @@ clear
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/myridwan/izinvps/ipuk/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/dragon-andy/permission/main/ip | grep $MYIP | awk '{print $2}')
 if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/myridwan/izinvps/ipuk/ip | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/dragon-andy/permission/main/ip | grep $MYIP | awk '{print $3}')
 fi
 
 # =========================================
