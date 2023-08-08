@@ -303,7 +303,7 @@ rm -f update.sh
 clear
 echo -e "$green[INFO]$NC INSTALL SLOWDNS"
 sleep 2
-wget https://raw.githubusercontent.com/dragon-andy/VVIP/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
+wget https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install openvpn              $NC"
