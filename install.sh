@@ -210,39 +210,38 @@ wget -q https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/dependencies.sh;
 rm dependencies.sh
 clear
 
-    echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
-    echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-    echo "1. Use Domain From Script / Gunakan Domain Dari Script"
-    echo "2. Choose Your Own Domain / Pilih Domain Sendiri"
-    echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-    read -rp "Choose Your Domain Installation : " dom 
-
-    if test $dom -eq 1; then
+   clear
+    echo -e "$BBlue                     SETUP DOMAIN VPS     $NC"
+    echo -e "$BYellow----------------------------------------------------------$NC"
+    echo -e "$BGreen 1. Use Domain Random / Gunakan Domain Random $NC"
+    echo -e "$BGreen 2. Choose Your Own Domain / Gunakan Domain Sendiri $NC"
+    echo -e "$BYellow----------------------------------------------------------$NC"
+    read -rp " input 1 or 2 / pilih 1 atau 2 : " dns
+	if test $dns -eq 1; then
     clear
     apt install jq curl -y
-    wget -q -O /root/cf "${CDNF}/cf" >/dev/null 2>&1
+    wget -q -O /root/cf "${CDN}/cf" >/dev/null 2>&1
     chmod +x /root/cf
     bash /root/cf | tee /root/install.log
-    print_success "DomainAll"
-    elif test $dom -eq 2; then
-    read -rp "Enter Your Domain : " domen 
-    echo $domen > /root/domain
-    echo "$domen" > /root/domain
-    echo "$domen" > /root/scdomain
-    echo "$nsdomen" > /root/nsdomain
-    echo "$domen" > /etc/xray/domain
-    echo "$domen" > /etc/xray/scdomain
-    echo "$nsdomen" > /etc/xray/nsdomain
-    echo "IP=$domen" > /var/lib/ssnvpn-pro/ipvps.conf
-    cp /root/domain /etc/xray/domain
+    print_success "Domain Random Done"
+	elif test $dns -eq 2; then
+    read -rp "Enter Your Domain / masukan domain : " dom
+    read -rp "Input ur ns-domain : " -e nsdomen
+    echo "IP=$dom" > /var/lib/scrz-prem/ipvps.conf
+    echo "$dom" > /root/scdomain
+	echo "$dom" > /etc/xray/scdomain
+	echo "$dom" > /etc/xray/domain
+	echo "$dom" > /etc/v2ray/domain
+	echo "$dom" > /root/domain
+        echo "$nsdomen" > /etc/xray/nsdomain
+        echo "$nsdomen" > /root/nsdomain
     else 
     echo "Not Found Argument"
     exit 1
     fi
-    echo -e "${GREEN}Done!${NC}"
+	echo -e "${BGreen}Done!${NC}"
     sleep 2
-    clear
-
+clear
 #THEME RED
 cat <<EOF>> /etc/ssnvpn/theme/red
 BG : \E[40;1;41m
