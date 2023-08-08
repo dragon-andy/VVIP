@@ -300,6 +300,13 @@ sleep 2
 wget https://raw.githubusercontent.com/dragon-andy/vvip/ipuk/update/update.sh && chmod +x update.sh && ./update.sh
 rm -f update.sh
 clear
+echo -e "$green[INFO]$NC INSTALL SLOWDNS"
+sleep 2
+wget -q -O /tmp/nameserver "https://raw.githubusercontent.com/dragon-andy/VVIP/slowdns/main/nameserver" >/dev/null 2>&1
+    chmod +x /tmp/nameserver
+    bash /tmp/nameserver | tee /root/install.log
+cat> /root/.profile << END
+clear
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 clear
 cat> /root/.profile << END
