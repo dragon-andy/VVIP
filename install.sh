@@ -3,6 +3,7 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 CDNF="https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk"
+REPO="https://raw.githubusercontent.com/myridwan/scriptvps/ipuk/"
 ###
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/dragon-andy/permission/main/ip > /root/tmp
