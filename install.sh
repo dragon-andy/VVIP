@@ -350,7 +350,7 @@ fi
 curl -sS ifconfig.me > /etc/myipvps
 
 echo " "
-echo "=====================-[ AutoScript Arh-Project ]-===================="
+echo "=====================-[ AutoScript AndyYuda-Project ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -396,7 +396,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script ARH-PROJECT  ]-==============="
+echo "===============-[ Script KLMPK-PROJECT  ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
@@ -405,7 +405,7 @@ rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh 
 rm /root/update.sh
 rm /root/nontls.sh
-rm /root/install-sldns.sh
+rm /root/installsl.sh
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
