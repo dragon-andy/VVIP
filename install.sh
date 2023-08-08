@@ -209,17 +209,6 @@ wget -q https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/dependencies.sh;
 rm dependencies.sh
 clear
 
-echo -e "════════════════════════════════════════" | lolcat
-echo -e "█████████" | lolcat
-echo -e "█▄█████▄█╔╦╗╔═╦╗╔══╗╔═╗╔═╗╔═╗─╔╗╔═╗╔═╗╔══╗" | lolcat
-echo -e "█▼▼▼▼▼   ║╔╝╚╗║║╚╗╔╝║╬║║╬║║║║─║║║╦╝║╔╝╚╗╔╝ " | lolcat
-echo -e "█.       ║╚╗╔╩╗║─║║─║╔╝║╗╣║║║╔╣║║╩╗║╚╗─║║─ " | lolcat
-echo -e "█▲▲▲▲▲   ╚╩╝╚══╝─╚╝─╚╝─╚╩╝╚═╝╚═╝╚═╝╚═╝─╚╝─ " | lolcat
-echo -e "█████████ " | lolcat
-echo -e " ██ ██ " | lolcat
-echo -e "════════════════════════════════════════" | lolcat
-echo -e "            [Free Internet]" | lolcat
-echo -e "════════════════════════════════════════" | lolcat
     echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
     echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
     echo "1. Use Domain From Script / Gunakan Domain Dari Script"
