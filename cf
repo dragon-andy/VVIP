@@ -7,12 +7,12 @@ apt install jq curl -y
 clear
 
 read -rp "Sub Domain (Contoh: Myrid112): " -e sub
-DOMAIN=rstore-vpn.cloud
+DOMAIN=klmpk-tunneling.my.id
 echo $sub > /root/cfku
-SUB_DOMAIN=${sub}.rstore-vpn.cloud
-CF_ID=ridwanstoreaws@gmail.com
-CF_KEY=4ecfe9035f4e6e60829e519bd5ee17d66954f
-echo "rstore-vpn.cloud" > /root/domain
+SUB_DOMAIN=${sub}.klmpk-tunneling.my.id
+CF_ID=andyyuda41@gmail.com
+CF_KEY=0d626234700bad388d6d07b49c42901445d1c
+echo "klmpk-tunneling.my.id" > /root/domain
 echo $SUB_DOMAIN > /root/domain
 
 set -euo pipefail
@@ -45,11 +45,11 @@ echo "Host : $SUB_DOMAIN"
 echo $SUB_DOMAIN > /root/domain
 cp /root/domain /etc/xray/domain
 
-#wget -O /usr/bin/dhn "https://raw.githubusercontent.com/myridwan/scvip/ipuk/CDN/A/I/U/E/O/dhn.sh"
-#wget -O /usr/bin/dhn2 "https://raw.githubusercontent.com/myridwan/scvip/ipuk/CDN/A/I/U/E/O/dhn2.sh"
-#wget -O /usr/bin/dhn3 "https://raw.githubusercontent.com/myridwan/scvip/ipuk/CDN/A/I/U/E/O/dhn3.sh"
-#wget -O /usr/bin/nza "https://raw.githubusercontent.com/myridwan/scvip/ipuk/CDN/A/I/U/E/O/nza.sh"
-#wget -O /usr/bin/wcc "https://raw.githubusercontent.com/myridwan/scvip/ipuk/CDN/A/I/U/E/O/cs_wc.sh"
+#wget -O /usr/bin/dhn "https://raw.githubusercontent.com/dragon-andy/scvip/ipuk/CDN/A/I/U/E/O/dhn.sh"
+#wget -O /usr/bin/dhn2 "https://raw.githubusercontent.com/dragon-andy/scvip/ipuk/CDN/A/I/U/E/O/dhn2.sh"
+#wget -O /usr/bin/dhn3 "https://raw.githubusercontent.com/dragon-andy/scvip/ipuk/CDN/A/I/U/E/O/dhn3.sh"
+#wget -O /usr/bin/nza "https://raw.githubusercontent.com/dragon-andy/scvip/ipuk/CDN/A/I/U/E/O/nza.sh"
+#wget -O /usr/bin/wcc "https://raw.githubusercontent.com/dragon-andy/scvip/ipuk/CDN/A/I/U/E/O/cs_wc.sh"
 
 #chmod +x /usr/bin/dhn
 #chmod +x /usr/bin/dhn2
