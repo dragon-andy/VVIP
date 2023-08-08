@@ -19,10 +19,10 @@ sleep 3
 cd
 
 ns_domain_cloudflare() {
-	DOMAIN=klmpk.my.id
+	DOMAIN=klmpk-tunneling.my.id
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}.klmpk.my.id
+	SUB_DOMAIN=${SUB}.klmpk-tunneling.my.id
 	NS_DOMAIN=ns.${SUB_DOMAIN}
 	CF_ID=andyyuda41@gmail.com
         CF_KEY=0d626234700bad388d6d07b49c42901445d1c
@@ -67,15 +67,15 @@ ns_domain_cloudflare() {
 setup_dnstt() {
 	cd
 	mkdir -p /etc/slowdns
-	wget -O dnstt-server "https://raw.githubusercontent.com/versi01/Project/main/wireguard/dnstt-server" >/dev/null 2>&1
+	wget -O dnstt-server "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/slowdns/dnstt-server" >/dev/null 2>&1
 	chmod +x dnstt-server >/dev/null 2>&1
-	wget -O dnstt-client "https://raw.githubusercontent.com/versi01/Project/main/wireguard/dnstt-client" >/dev/null 2>&1
+	wget -O dnstt-client "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/slowdns/dnstt-client" >/dev/null 2>&1
 	chmod +x dnstt-client >/dev/null 2>&1
 	./dnstt-server -gen-key -privkey-file server.key -pubkey-file server.pub
 	chmod +x *
 	mv * /etc/slowdns
-	wget -O /etc/systemd/system/client.service "https://raw.githubusercontent.com/versi01/Project/main/wireguard/client" >/dev/null 2>&1
-	wget -O /etc/systemd/system/server.service "https://raw.githubusercontent.com/versi01/Project/main/wireguard/server" >/dev/null 2>&1
+	wget -O /etc/systemd/system/client.service "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/slowdns/client" >/dev/null 2>&1
+	wget -O /etc/systemd/system/server.service "https://raw.githubusercontent.com/versi01/Projectdragon-andy/VVIP/ipuk/slowdns/server" >/dev/null 2>&1
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/client.service 
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/server.service 
 }
