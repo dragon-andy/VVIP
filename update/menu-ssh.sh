@@ -674,7 +674,124 @@ sleep 1
 clear
 echo > /etc/cron.d/tendang
 echo "# Autokill" >/etc/cron.d/tendang
-echo "*/0,1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "" > /root/log-limit.txt
+echo -e ""
+echo -e "======================================"
+echo -e ""
+echo -e "      Allowed MultiLogin : $max"
+echo -e "      AutoKill Every     : 1 Minutes"
+echo -e ""
+echo -e "======================================"
+service cron reload >/dev/null 2>&1
+service cron restart >/dev/null 2>&1
+echo > /etc/cron.d/tendang
+echo "# Autokill" >/etc/cron.d/tendang
+echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
 echo "" > /root/log-limit.txt
 echo -e ""
 echo -e "======================================"
