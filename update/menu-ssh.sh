@@ -656,7 +656,7 @@ echo -e "\E[44;1;39m             AUTOKILL SSH          \E[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Status Autokill : $sts        "
 echo -e ""
-echo -e "[1]  AutoKill After 0 Minutes"
+echo -e "[1]  AutoKill After banned"
 echo -e "[2]  AutoKill After 10 Minutes"
 echo -e "[3]  AutoKill After 15 Minutes"
 echo -e "[4]  Turn Off AutoKill/MultiLogin"
@@ -674,7 +674,7 @@ sleep 1
 clear
 echo > /etc/cron.d/tendang
 echo "# Autokill" >/etc/cron.d/tendang
-echo "*/0 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
+echo "*/0,1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
 echo "" > /root/log-limit.txt
 echo -e ""
 echo -e "======================================"
