@@ -86,8 +86,8 @@ fi
                 fi
 			done
         if [ $j -gt 0 ]; then
-                if [ $OS -eq 1 ]; then
-                       userdel -f $Pengguna  >/dev/null 2>&1
+              if getent passwd $Pengguna > /dev/null 2>&1; then
+                        userdel $Pengguna > /dev/null 2>&1
                 fi
                 if [ $OS -eq 2 ]; then
                         service sshd restart > /dev/null 2>&1;
