@@ -1,6 +1,6 @@
 #!/bin/bash
 # =========================================
-BOT="https://raw.githubusercontent.com/myridwan/src/ipuk/"
+BOT="https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/"
 UPDATE="https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/update.sh"
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -208,7 +208,7 @@ case $opt in
 11) clear ; add-host ;;
 12) clear ; crtxray ;;
 13) clear ; auto-reboot ;;
-14) clear ; wget ${BOT}xolpanel.sh && chmod +x xolpanel.sh && ./xolpanel.sh ;;
+14) clear ; wget ${BOT}kontol.sh && chmod +x kontol.sh && ./kontol.sh ;;
 999) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
