@@ -86,8 +86,10 @@ fi
                 fi
 			done
         if [ $j -gt 0 ]; then
-              if getent passwd $Pengguna > /dev/null 2>&1; then
-                 userdel $Pengguna > /dev/null 2>&1
+              if egrep "^$username" /etc/passwd >/dev/null
+                if [ $? -eq 0 ]; then
+                # proses mengganti passwordnya
+                passwd -l $username
 	        fi
                 if [ $OS -eq 2 ]; then
                         service sshd restart > /dev/null 2>&1;
