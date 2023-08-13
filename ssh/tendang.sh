@@ -1,6 +1,4 @@
 #!/bin/bash
-# Script by Andyyuda
-#!/bin/bash
 clear
 MAX=1
 if [ -e "/var/log/auth.log" ]; then
@@ -13,11 +11,7 @@ if [ -e "/var/log/secure" ]; then
 fi
 
 if [ $OS -eq 1 ]; then
-	getent passwd $username > /dev/null 2>&1;
-        userdel $username > /dev/null 2>&1;
-	systemctl restart sshd >/dev/null 2>&1;
-	systemctl restart ws >/dev/null 2>&1;
-     
+	service ssh restart > /dev/null 2>&1;
 fi
 if [ $OS -eq 2 ]; then
 	service sshd restart > /dev/null 2>&1;
@@ -91,10 +85,7 @@ fi
 			done
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
-                       getent passwd $user > /dev/null 2>&1;
-                      userdel $user > /dev/null 2>&1;
-	             systemctl restart sshd >/dev/null 2>&1;
-	             systemctl restart ws >/dev/null 2>&1;
+                        service ssh restart > /dev/null 2>&1;
                 fi
                 if [ $OS -eq 2 ]; then
                         service sshd restart > /dev/null 2>&1;
@@ -102,20 +93,4 @@ fi
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-egrep "^$user" /etc/passwd >/dev/null
-if [ $? -eq 0 ]; then
-# proses mengganti passwordnya
-passwd -l $user
-clear
-  echo " "
-  echo " "
-  echo " "
-  echo "-----------------------------------------------"
-  echo -e "Username ${blue}$user${NC} successfully ${red}LOCKED!${NC}."
-  echo -e "Access Login to username ${blue}$user${NC} has been locked."
-  echo "-----------------------------------------------"
-else
-echo "Username not found on your server."
-    exit 1
-fi
-
+        
