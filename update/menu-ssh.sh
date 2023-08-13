@@ -362,7 +362,6 @@ echo "User Who Violate The Maximum Limit";
 echo "Time - Username - Number of Multilogin"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 cat /root/log-limit.txt
-echo -e "tendang.sh"
 else
 echo " No user has committed a violation"
 echo " "
@@ -374,6 +373,7 @@ echo " ";
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo " ";
 read -n 1 -s -r -p "Press any key to back on menu"
+tendang
 menu
 }
 function delssh(){
