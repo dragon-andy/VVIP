@@ -253,7 +253,7 @@ TEXT="Project VPN TUNNELING
 <code>User Login :</code> <code>root</code>
 <code>Pass Login :</code> <code>bok</code>
 <code>User Script:</code> <code>$IZIN</code>
-<code>Exp Script :</code> <code>$Exp1</code>
+<code>Exp Script :</code> <code>$exp2</code>
 <code>Location   :</code> <code>$CITY</code>
 <code>Timezone   :</code> <code>$TIME</code>
 ============================
