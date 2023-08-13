@@ -24,6 +24,7 @@ wget -q -O /usr/bin/mspeed "https://raw.githubusercontent.com/dragon-andy/VVIP/i
 wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/update/menu-bandwith.sh" && chmod +x /usr/bin/mbandwith
 wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/ssh/tendang.sh" && chmod +x /usr/bin/tendang
 wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/lock.sh" && chmod +x /usr/bin/lock
+wget -q -O /usr/bin/killtrial "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/killtrial.sh" && chmod +x /usr/bin/killtrial
 echo -e " [INFO] Update Successfully"
 sleep 2
 rm -f update.sh
