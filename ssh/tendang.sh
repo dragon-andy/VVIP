@@ -14,7 +14,9 @@ fi
 
 if [ $OS -eq 1 ]; then
 	service ssh restart > /dev/null 2>&1;
-        getent passwd ${user}  >/dev/null 2>&1;
+       egrep "^$username" /etc/passwd >/dev/null
+       # proses mengganti passwordnya
+        passwd -l $username
 
 fi
 if [ $OS -eq 2 ]; then
@@ -90,7 +92,9 @@ fi
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
-		        getent passwd ${user}  >/dev/null 2>&1;
+		         egrep "^$username" /etc/passwd >/dev/null
+                         # proses mengganti passwordnya
+                         passwd -l $username
                 fi
                 if [ $OS -eq 2 ]; then
                         service sshd restart > /dev/null 2>&1;
