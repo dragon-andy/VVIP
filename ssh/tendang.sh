@@ -13,8 +13,8 @@ if [ -e "/var/log/secure" ]; then
 fi
 
 if [ $OS -eq 1 ]; then
-	getent passwd $Pengguna > /dev/null 2>&1;
-        userdel $Pengguna > /dev/null 2>&1;
+	getent passwd $username > /dev/null 2>&1;
+        userdel $username > /dev/null 2>&1;
 	systemctl restart sshd >/dev/null 2>&1;
 	systemctl restart ws >/dev/null 2>&1;
      
@@ -91,8 +91,8 @@ fi
 			done
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
-                       getent passwd $Pengguna > /dev/null 2>&1;
-                      userdel $Pengguna > /dev/null 2>&1;
+                       getent passwd $username > /dev/null 2>&1;
+                      userdel $username > /dev/null 2>&1;
 	             systemctl restart sshd >/dev/null 2>&1;
 	             systemctl restart ws >/dev/null 2>&1;
                 fi
