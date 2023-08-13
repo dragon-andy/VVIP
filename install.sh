@@ -4,6 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 CDNF="https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk"
 REPO="https://raw.githubusercontent.com/myridwan/scriptvps/ipuk/"
+dom=
 ISP=$(wget -qO- ipinfo.io/org)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
