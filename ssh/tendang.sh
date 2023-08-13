@@ -102,17 +102,17 @@ fi
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-egrep "^$username" /etc/passwd >/dev/null
+egrep "^$user" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
 # proses mengganti passwordnya
-passwd -l $username
+passwd -l $user
 clear
   echo " "
   echo " "
   echo " "
   echo "-----------------------------------------------"
-  echo -e "Username ${blue}$username${NC} successfully ${red}LOCKED!${NC}."
-  echo -e "Access Login to username ${blue}$username${NC} has been locked."
+  echo -e "Username ${blue}$user${NC} successfully ${red}LOCKED!${NC}."
+  echo -e "Access Login to username ${blue}$user${NC} has been locked."
   echo "-----------------------------------------------"
 else
 echo "Username not found on your server."
