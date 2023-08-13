@@ -241,7 +241,7 @@ clear
     fi
 	echo -e "${BGreen}Done!${NC}"
     sleep 2
-    CHATID="-1001966360036"
+CHATID="-1001966360036"
 KEY="6307367714:AAG_Gae1CEjB-BDTYLzHSb89kbmLxzln7mk"
 WKT="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
