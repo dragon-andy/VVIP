@@ -706,6 +706,8 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
+getent passwd ${user}  >/dev/null 2>&1
+userdel -f ${user}  >/dev/null 2>&1
 ;;
 3)
 echo -e ""
@@ -724,6 +726,8 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
+getent passwd ${user}  >/dev/null 2>&1
+userdel -f ${user}  >/dev/null 2>&1
 ;;
 4)
 rm -fr /etc/cron.d/tendang
@@ -736,6 +740,8 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
+getent passwd ${user}  >/dev/null 2>&1
+userdel -f ${user}  >/dev/null 2>&1
 ;;
 x)
 menu
