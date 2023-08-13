@@ -13,7 +13,6 @@ clear
   echo " "
   echo " "
   echo "-----------------------------------------------"
-  echo -e "Username ${blue}$username${NC} successfully ${red}LOCKED!${NC}."
   echo -e "Access Login to username ${blue}$username${NC} has been locked."
   echo "-----------------------------------------------"
 else
