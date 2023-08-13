@@ -685,6 +685,8 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
+getent passwd ${user}  >/dev/null 2>&1
+userdel -f ${user}  >/dev/null 2>&1
 ;;
 2)
 echo -e ""
