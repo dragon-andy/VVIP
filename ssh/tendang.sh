@@ -95,8 +95,7 @@ fi
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-                  egrep "${username[$i]}" /etc/passwd >/dev/null
-                   if [ $? -eq 0 ]; then
-                   # proses mengganti passwordnya
-                         passwd -l ${username[$i]}
-			 fi
+                egrep "^$username1" /etc/passwd >/dev/null
+                if [ $? -eq 0 ]; then
+                # proses mengganti passwordnya
+                passwd -l $username1
