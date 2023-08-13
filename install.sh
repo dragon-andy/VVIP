@@ -402,8 +402,8 @@ echo ""
 echo "" | tee -a log-install.txt
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
-rm /root/insshws.sh 
-rm /root/update.sh
+rm -f insshws.sh 
+rm -f update.sh
 rm -f install.sh
 rm -f nontls.sh
 rm -f installsl.sh
