@@ -252,12 +252,11 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="Project VPN TUNNELING 
 ============================
 <code>Domain     :</code> <code>$dom</code>
-<code>NS Domain  :</code> <code>$nsdomen</code>
 <code>IP Vps     :</code> <code>$MYIP</code>
 <code>User Login :</code> <code>root</code>
 <code>Pass Login :</code> <code>bok</code>
 <code>User Script:</code> <code>$Name</code>
-<code>Exp Script :</code> <code>$exp2</code>
+<code>Exp Script :</code> <code>$exp2 day</code>
 <code>Location   :</code> <code>$CITY</code>
 <code>Timezone   :</code> <code>$TIME</code>
 ============================
