@@ -67,7 +67,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 echo " "
-cat /root/log-limit.txt " username
+echo -e " log-limit.txt " username
 egrep "^$username" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
 # proses mengganti passwordnya
