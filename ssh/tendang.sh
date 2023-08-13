@@ -95,7 +95,7 @@ fi
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+  
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -106,7 +106,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -117,7 +117,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -128,7 +128,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -139,7 +139,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -150,7 +150,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -161,7 +161,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -172,7 +172,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -183,7 +183,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -194,7 +194,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -205,7 +205,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -216,7 +216,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -227,7 +227,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -238,7 +238,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -249,7 +249,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
@@ -260,7 +260,7 @@ done
                 service dropbear restart > /dev/null 2>&1;
                 j=0;
 		fi
-done
+
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
                         service ssh restart > /dev/null 2>&1;
