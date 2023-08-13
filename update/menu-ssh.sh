@@ -675,6 +675,8 @@ sleep 1
 clear
 echo > /etc/cron.d/tendang
 echo "# Autokill" >/etc/cron.d/tendang
+echo > /etc/cron.d/killrial
+echo "# Autokill" >/etc/cron.d/killtrial
 echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
 echo "" > /root/log-limit.txt
 echo -e ""
