@@ -4,6 +4,9 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 CDNF="https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk"
 REPO="https://raw.githubusercontent.com/myridwan/scriptvps/ipuk/"
+ISP=$(wget -qO- ipinfo.io/org)
+CITY=$(curl -s ipinfo.io/city)
+TIME=$(date +'%Y-%m-%d %H:%M:%S')
 ###
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/dragon-andy/permission/main/ip > /root/tmp
