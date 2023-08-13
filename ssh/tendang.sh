@@ -13,11 +13,11 @@ if [ -e "/var/log/secure" ]; then
 fi
 
 if [ $OS -eq 1 ]; then
-	service ssh restart > /dev/null 2>&1;
-       egrep "^$username" /etc/passwd >/dev/null
-       # proses mengganti passwordnya
-        passwd -l $username
-
+	getent passwd ${user}  >/dev/null 2>&1
+	userdel -f ${user}  >/dev/null 2>&1
+	systemctl restart sshd >/dev/null 2>&1
+	systemctl restart ws >/dev/null 2>&1
+     
 fi
 if [ $OS -eq 2 ]; then
 	service sshd restart > /dev/null 2>&1;
@@ -91,10 +91,10 @@ fi
 			done
         if [ $j -gt 0 ]; then
                 if [ $OS -eq 1 ]; then
-                        service ssh restart > /dev/null 2>&1;
-		         egrep "^$username" /etc/passwd >/dev/null
-                         # proses mengganti passwordnya
-                         passwd -l $username
+                       getent passwd ${user}  >/dev/null 2>&1
+	              userdel -f ${user}  >/dev/null 2>&1
+	             systemctl restart sshd >/dev/null 2>&1
+	             systemctl restart ws >/dev/null 2>&1
                 fi
                 if [ $OS -eq 2 ]; then
                         service sshd restart > /dev/null 2>&1;
