@@ -86,7 +86,7 @@ fi
                 fi
 			done
         if [ $j -gt 0 ]; then
-              if egrep "^$username" /etc/passwd >/dev/null
+              if egrep "$username" /etc/passwd >/dev/null
                 if [ $? -eq 0 ]; then
                 # proses mengganti passwordnya
                 passwd -l $username
