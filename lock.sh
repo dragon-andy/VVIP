@@ -66,13 +66,9 @@ exit 0
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
-if [ -e "/root/log-limit.txt" ]; then
-echo "User Who Violate The Maximum Limit";
-echo "Time - Username - Number of Multilogin"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-cat /root/log-limit.txt
-echo -e "$username"
-egrep "^$username" /etc/passwd >/dev/null
+echo " "
+username1=( cat /root/log-limit.txt);
+egrep "^$username1" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
 # proses mengganti passwordnya
 passwd -l $username
