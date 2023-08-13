@@ -675,9 +675,7 @@ clear
 echo > /etc/cron.d/tendang
 echo > /etc/cron.d/lock
 echo "# Autokill" >/etc/cron.d/tendang
-echo "# Autokill" >/etc/cron.d/lock
 echo "*/1 * * * *  root /usr/bin/tendang $max" >>/etc/cron.d/tendang && chmod +x /etc/cron.d/tendang
-echo "*/1 * * * *  root /usr/bin/lock " >>/etc/cron.d/lock && chmod +x /etc/cron.d/lock
 echo "" > /root/log-limit.txt
 echo -e ""
 echo -e "======================================"
@@ -688,7 +686,6 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
-getent passwd ${user}  >/dev/null 2>&1
 ;;
 2)
 echo -e ""
@@ -707,7 +704,6 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
-getent passwd ${user}  >/dev/null 2>&1
 ;;
 3)
 echo -e ""
@@ -726,7 +722,6 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
-getent passwd ${user}  >/dev/null 2>&1
 ;;
 4)
 rm -fr /etc/cron.d/tendang
@@ -739,7 +734,6 @@ echo -e ""
 echo -e "======================================"
 service cron reload >/dev/null 2>&1
 service cron restart >/dev/null 2>&1
-getent passwd ${user}  >/dev/null 2>&1
 ;;
 x)
 menu
