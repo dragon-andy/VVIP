@@ -29,9 +29,10 @@ checking_sc() {
 }
 checking_sc
 clear
-
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
+tram=$( free -m | awk 'NR==2 {print $2}' )
+uram=$( free -m | awk 'NR==2 {print $3}' )
+ISP=$(curl -s ipinfo.io/org?token=7578ac19afd785 | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city?token=7578ac19afd785 )
 MYIP=$(curl -sS ipv4.icanhazip.com)
 Name=$(curl -sS https://raw.githubusercontent.com/dragon-andy/permission/main/ip | grep $MYIP | awk '{print $2}')
 if [ "$res" = "Expired" ]; then
@@ -160,19 +161,21 @@ clear
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "                      << INFORMASI VPS >>                    \E[0m" | lolcat
 echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
-echo -e "  ${BLUE}• ${GREEN}Sever Uptime        ${NC}= $( uptime -p  | cut -d " " -f 2-10000 ) "
-echo -e "  ${BLUE}• ${GREEN}Current Time        ${NC}= $( date -d "0 days" +"%d-%m-%Y | %X" )"
-echo -e "  ${BLUE}• ${GREEN}Operating System    ${NC}= $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g')( $(uname -m))"
-echo -e "  ${BLUE}• ${GREEN}Host    Domain      ${NC}= $( cat /etc/xray/domain )"
-echo -e "  ${BLUE}• ${GREEN}Slowdns Domain      ${NC}= $( cat /etc/xray/dns )"
-echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
-echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
-echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
-echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}$Name ${NC}"
-echo -e "  ${BLUE}• ${GREEN}Script Exfire       ${NC}= ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
-echo -e "  ${BLUE}• ${GREEN}Developer           ${NC}= KlmpkVPN Tunneling ${NC}"
+echo -e "  ${BLUE}• ${GREEN}Sever Uptime        ${NC}: $( uptime -p  | cut -d " " -f 2-10000 ) "
+echo -e "  ${BLUE}• ${GREEN}Current Time        ${NC}: $( date -d "0 days" +"%d-%m-%Y | %X" )"
+echo -e "  ${BLUE}• ${GREEN}Operating System    ${NC}: $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g')( $(uname -m))"
+echo -e "  ${BLUE}• ${GREEN}Domain VPS          ${NC}: $( cat /etc/xray/domain )"
+echo -e "  ${BLUE}• ${GREEN}Slowdns Domain      ${NC}: $( cat /etc/xray/dns )"
+echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}: ${ipsaya}"
+echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}: ${ISP}"
+echo -e "  ${BLUE}• ${GREEN}City                ${NC}: ${CITY}"
+echo -e "  ${BLUE}• ${GREEN}Ram                 ${NC}: ${uram}/${tram}"
+echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}: ${YELLOW}$Name ${NC}"
+echo -e "  ${BLUE}• ${GREEN}Script Exfire       ${NC}: ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
+echo -e "  ${BLUE}• ${GREEN}Developer           ${NC}: KlmpkVPN Tunneling ${NC}"
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "                     << STATUS SERVICE >>                    \E[0m" | lolcat
+echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "      ${COLOR2}[ SSH Websocket${NC}: ${GREEN}ON ${NC}]  [ NGINX${NC}: ${status_nginx} ] [ XRAY${NC} : ${status_xray} ] "
 echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
@@ -192,6 +195,7 @@ echo -e "  ${CYAN}[06]${NC} • ${RED}[${NC}${PURPLE} UPDATE MENU${NC}${RED}]${N
 echo -e "  ${CYAN}[07]${NC} • ${RED}[${NC}${PURPLE} INSTALL UDP ${NC}${RED}]${NC}          ${CYAN}[14]${NC} • ${RED}[${NC}${PURPLE} MENU BOT ${NC}${RED}]${NC} "
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "              << SCRIPT MULTIPORT TUNNELING >>                    \E[0m"
+echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " Select menu : "; read opt
 case $opt in
