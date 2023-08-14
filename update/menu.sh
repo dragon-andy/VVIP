@@ -29,6 +29,7 @@ checking_sc() {
 }
 checking_sc
 clear
+cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 ISP=$(curl -s ipinfo.io/org?token=7578ac19afd785 | cut -d " " -f 2-10 )
@@ -169,7 +170,8 @@ echo -e "  ${BLUE}• ${GREEN}Slowdns Domain      ${NC}: $( cat /etc/xray/dns )"
 echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}: ${ipsaya}"
 echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}: ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}: ${CITY}"
-echo -e "  ${BLUE}• ${GREEN}Ram                 ${NC}: ${uram}/${tram}"
+echo -e "  ${BLUE}• ${GREEN}Ram                 ${NC}: ${uram}/${tram}GB"
+echo -e "  ${BLUE}• ${GREEN}CPU USAGE           ${NC}: $cpu_usage"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}: ${YELLOW}$Name ${NC}"
 echo -e "  ${BLUE}• ${GREEN}Script Exfire       ${NC}: ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
 echo -e "  ${BLUE}• ${GREEN}Developer           ${NC}: KlmpkVPN Tunneling ${NC}"
