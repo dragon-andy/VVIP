@@ -2,11 +2,6 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
-AKUN="AKUN TROJAN"
-TIMES="10"
-CHATID="5736569839"
-KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m" 
@@ -201,7 +196,9 @@ trojan-menu
 fi
 done
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "   Expired (days): " masaaktif
+read -p " Limit User Quota " Quota
+read -p " Limit User ip " limit
+read -p " Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#! '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
@@ -212,26 +209,14 @@ trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&se
 trojanlink="trojan://${uuid}@bug.com:${tr}?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 clear
 END
-TRX="
-<code>INFO MASKU -Transaksi</code>
-<code>────────────────────</code>
-<b>  ⚠️TRANSAKSI TROJAN WS⚠️      </b>
-<code>────────────────────</code>
-<code>🌟Owner   : $OWNER</code>
-<code>🌟Detail  : $AKUN</code>
-<code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domain</code>
-<code>────────────────────</code>
-<i>Notifikasi Via RstoreBOT</i>
-<b>Tele : @kytxz</b>
-"
-curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " ${COLBG1}         • CREATE TROJAN USER •         ${NC} "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$COLOR1 ${NC} Remarks     : ${user}" 
 echo -e "$COLOR1 ${NC} Expired On  : $exp" 
+echo -e "$COLOR1 ${NC} User Quota    : ${Quota} GB" 
+echo -e "$COLOR1 ${NC} Limit IP      : ${limit} User" 
 echo -e "$COLOR1 ${NC} Host/IP     : ${domain}" 
 echo -e "$COLOR1 ${NC} Port        : ${tr}" 
 echo -e "$COLOR1 ${NC} Key         : ${uuid}" 
@@ -250,25 +235,69 @@ echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-trojan
 }
+function trialtrojan(){
+source /var/lib/ssnvpn-pro/ipvps.conf
+domain=$(cat /etc/xray/domain)
+tls="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
+ntls="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
+user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+uuid=$(cat /proc/sys/kernel/random/uuid)
+masaaktif=1
+exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+sed -i '/#trojanws$/a\#! '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 
+systemctl restart xray
+trojanlink1="trojan://${uuid}@${domain}:${tls}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
+trojanlink="trojan://${uuid}@isi_bug_disini:${tls}?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
+trojanlink2="trojan://${uuid}@isi_bug_disini:${ntls}?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws#${user}"
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;41;36m           TRIAL TROJAN           \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Remarks        : ${user}"
+echo -e "Host/IP        : ${domain}"
+echo -e "Port TLS       : ${tls}"
+echo -e "Port none TLS  : ${ntls}"
+echo -e "Port gRPC      : ${tls}"
+echo -e "Key            : ${uuid}"
+echo -e "Path           : /trojan-ws"
+echo -e "ServiceName    : trojan-grpc"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Link TLS       : ${trojanlink}"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Link none TLS  : ${trojanlink2}"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Link gRPC      : ${trojanlink1}"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Expired On     : $exp"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-trojan
+}
 
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " \e[1;97;101m           MENU MANAGER TROJAN          \E[0m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}1.${NC} \033[0;36mCreating a Trojan Account${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}2.${NC} \033[0;36mRenew a Trojan Account${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}3.${NC} \033[0;36mDelete a Trojan Account${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}4.${NC} \033[0;36mCek Login Trojan Account${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}2.${NC} \033[0;36mTrial  Trojan Account${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}3.${NC} \033[0;36mRenew a Trojan Account${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}4.${NC} \033[0;36mDelete a Trojan Account${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}5.${NC} \033[0;36mCek Login Trojan Account${NC}"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -p " Select menu :  "  opt
 echo -e ""
 case $opt in
 01 | 1) clear ; addtrojan ;;
-02 | 2) clear ; renewtrojan ;;
-03 | 3) clear ; deltrojan ;;
-04 | 4) clear ; cektrojan ;;
+02 | 2) clear ; addtrojan ;;
+03 | 3) clear ; renewtrojan ;;
+04 | 4) clear ; deltrojan ;;
+05 | 5) clear ; cektrojan ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-trojan ;;
 esac
