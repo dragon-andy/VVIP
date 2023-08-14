@@ -165,8 +165,7 @@ none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ /
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 read -rp "   Input Username : " -e user
-read -p "   Owner     : " OWNER
-read -p "Input Id Grup (-1001911868043) : " CHATIDGC
+
       
 if [ -z $user ]; then
 echo -e " [Error] Username cannot be empty "
@@ -190,7 +189,9 @@ menu
 	done
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "   Expired (days): " masaaktif
+read -p " Limit User Quota " Quota
+read -p " Limit User ip " limit
+read -p " Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
@@ -259,10 +260,12 @@ echo -e " ${COLBG1}        • CREATE VMESS USER •           ${NC} "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$COLOR1 ${NC} Remarks       : ${user}"
 echo -e "$COLOR1 ${NC} Expired On    : $exp" 
+echo -e "$COLOR1 ${NC} User Quota    : ${Quota} GB" 
+echo -e "$COLOR1 ${NC} Limit IP      : ${limit} User" 
 echo -e "$COLOR1 ${NC} Domain        : ${domain}" 
-echo -e "$COLOR1 ${NC} Port TLS      : ${tls}" 
-echo -e "$COLOR1 ${NC} Port none TLS : ${none}" 
-echo -e "$COLOR1 ${NC} Port  GRPC    : ${tls}" 
+echo -e "$COLOR1 ${NC} Port TLS      : 443" 
+echo -e "$COLOR1 ${NC} Port none TLS : 80" 
+echo -e "$COLOR1 ${NC} Port  GRPC    : 443" 
 echo -e "$COLOR1 ${NC} id            : ${uuid}" 
 echo -e "$COLOR1 ${NC} alterId       : 0" 
 echo -e "$COLOR1 ${NC} Security      : auto" 
