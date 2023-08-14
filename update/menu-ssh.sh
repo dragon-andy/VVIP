@@ -748,8 +748,9 @@ clear
 else
 echo "Username not found on your server."
     exit 1
-fi
 }
+
+###
 function userunlock(){
 echo " "
 echo " "
@@ -772,7 +773,6 @@ echo " "
 echo -e "Username ${red}$username${NC} not found in your server."
 echo " "    
 	exit 1
-fi
 
 }
 
