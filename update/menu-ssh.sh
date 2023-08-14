@@ -2,6 +2,11 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
+AKUN="AKUN SSH"
+TIMES="10"
+CHATID="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m" 
@@ -77,7 +82,21 @@ menu-ssh
 fi
 #####BOT-TRX
 END
-
+<☘️🔥TRX="
+<code>INFO MASKU -Transaksi</code>
+<code>────────────────────</code>
+<b>  ⚠️TRANSAKSI SSH OVPN⚠️      </b>
+<code>────────────────────</code>
+<code>🌟Owner   : $OWNER</code>
+<code>🌟Detail  : $AKUN</code>
+<code>🌟Durasi  : $exp</code>
+<code>🌟Server  : $domen</code>
+<code>────────────────────</code>
+<i>Notifikasi Via RstoreBOT</i>
+<b>Tele : @kytxz</b>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
+clear
 ###########
 IP=$(curl -sS ifconfig.me);
 ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
@@ -726,57 +745,6 @@ esac
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-function userlock(){
-if [ -e "/root/log-limit.txt" ]; then
-echo "User Who Violate The Maximum Limit";
-echo "Time - Username - Number of Multilogin"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-cat /root/log-limit.txt
-echo -e "$username"
-egrep "^$username" /etc/passwd >/dev/null
-if [ $? -eq 0 ]; then
-# proses mengganti passwordnya
-passwd -l $username
-clear
-  echo " "
-  echo " "
-  echo " "
-  echo "-----------------------------------------------"
-  echo -e "Username ${blue}$username${NC} successfully ${red}LOCKED!${NC}."
-  echo -e "Access Login to username ${blue}$username${NC} has been locked."
-  echo "-----------------------------------------------"
-else
-echo "Username not found on your server."
-    exit 1
-}
-
-###
-function userunlock(){
-echo " "
-echo " "
-echo " "
-read -p "Input USERNAME to unlock: " username
-egrep "^$username" /etc/passwd >/dev/null
-if [ $? -eq 0 ]; then
-# proses mengganti passwordnya
-passwd -u $username
-clear
-  echo " "
-  echo " "
-  echo " "
-  echo "-------------------------------------------"
-  echo -e "Username ${blue}$username${NC} successfully ${green}UNLOCKED${NC}."
-  echo -e "Access for Username ${blue}$username${NC} has been restored"
-  echo "-------------------------------------------"
-else
-echo " "
-echo -e "Username ${red}$username${NC} not found in your server."
-echo " "    
-	exit 1
-
-}
-
-
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " \e[1;97;101m            MENU MANAGER SSH           \E[0m"
@@ -790,9 +758,7 @@ echo -e "\033[1;93m〔⎆〕 ${grenbo}6.${NC} \033[0;36mRenew SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}7.${NC} \033[0;36mCek Member SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}8.${NC} \033[0;36mMullog SSH ${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}9.${NC} \033[0;36mAuto Kill user SSH ${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}10.${NC} \033[0;36mUser LOCK${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}11.${NC} \033[0;36mUser Unlock${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}12.${NC} \033[0;36mGo Back Menu${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}10.${NC} \033[0;36mGo Back Menu${NC}"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -p " Select menu :  "  opt
@@ -807,9 +773,7 @@ case $opt in
 07 | 7) clear ; memberssh ;;
 08 | 8) clear ; ceklim ;;
 09 | 9) clear ; autokill ;;
-10 | 10) clear ; userlock ;;
-11 | 11) clear ; userunlock ;;
-12 | 12) clear ; menu ;;
+10 | 10) clear ; menu ;;
 *) clear ; menu-ssh ;;
 esac
 
