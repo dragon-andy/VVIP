@@ -271,6 +271,7 @@ echo -e "$COLOR1 ${NC} alterId       : 0"
 echo -e "$COLOR1 ${NC} Security      : auto" 
 echo -e "$COLOR1 ${NC} Network       : ws" 
 echo -e "$COLOR1 ${NC} Path          : /vmess" 
+echo -e "$COLOR1 ${NC} Path Custom   : /Multipart"
 echo -e "$COLOR1 ${NC} Path WSS      : wss://bug.com/vmess" 
 echo -e "$COLOR1 ${NC} ServiceName   : vmess-grpc" 
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
@@ -374,6 +375,7 @@ echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "Network        : ws"
 echo -e "Path           : /vmess"
+echo -e "Path Custom    : /Multipart"
 echo -e "ServiceName    : vmess-grpc"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link TLS       : ${vmesslink1}"
@@ -390,18 +392,6 @@ read -n 1 -s -r -p "Press any key to back on menu"
 
 menu-vmess
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
