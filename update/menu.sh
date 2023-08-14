@@ -29,9 +29,6 @@ checking_sc() {
 }
 checking_sc
 clear
-cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
-tram=$( free -m | awk 'NR==2 {print $2}' )
-uram=$( free -m | awk 'NR==2 {print $3}' )
 ISP=$(curl -s ipinfo.io/org?token=7578ac19afd785 | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city?token=7578ac19afd785 )
 MYIP=$(curl -sS ipv4.icanhazip.com)
