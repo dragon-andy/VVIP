@@ -294,7 +294,7 @@ read -p " Select menu :  "  opt
 echo -e ""
 case $opt in
 01 | 1) clear ; addtrojan ;;
-02 | 2) clear ; addtrojan ;;
+02 | 2) clear ; trialtrojan ;;
 03 | 3) clear ; renewtrojan ;;
 04 | 4) clear ; deltrojan ;;
 05 | 5) clear ; cektrojan ;;
