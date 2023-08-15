@@ -8,16 +8,16 @@ chmod +x tendang
 cd
 
 echo "* * * * * root /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 1; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 2; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 3; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 4; /usr/bin/tendang" >> /etc/crontab
 echo "* * * * * root sleep 5; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 6; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 7; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 8; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 9; /usr/bin/tendang" >> /etc/crontab
 echo "* * * * * root sleep 10; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 15; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 20; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 25; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 30; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 35; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 40; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 45; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 50; /usr/bin/tendang" >> /etc/crontab
-echo "* * * * * root sleep 55; /usr/bin/tendang" >> /etc/crontab
+echo "* * * * * root sleep 11; /usr/bin/tendang" >> /etc/crontab
 
 service cron restart
