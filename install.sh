@@ -179,7 +179,8 @@ sleep 10
 exit 0
 fi
 sleep 3
-
+make dir 
+/etc/security/limits.conf
 mkdir -p /etc/ssnvpn
 mkdir -p /etc/ssnvpn/theme
 mkdir -p /var/lib/ssnvpn-pro >/dev/null 2>&1
