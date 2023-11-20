@@ -170,7 +170,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 read -rp "   Input Username : " -e user
 read -p "   Owner     : " OWNER
-
+CHATIDGC="5736569839"
       
 if [ -z $user ]; then
 echo -e " [Error] Username cannot be empty "
