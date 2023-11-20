@@ -102,7 +102,6 @@ CHATID="5736569839"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 WKT="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-TEXT="Project VPN TUNNELING 
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
 <b>  ⚠️TRANSAKSI AKUN SSH WS⚠️      </b>
