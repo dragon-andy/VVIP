@@ -82,22 +82,6 @@ echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu-ssh
 fi
-#####BOT-TRX
-END
-<☘️🔥TRX="
-<code>INFO MASKU -Transaksi</code>
-<code>────────────────────</code>
-<b>  ⚠️TRANSAKSI SSH OVPN⚠️      </b>
-<code>────────────────────</code>
-<code>🌟Owner   : $OWNER</code>
-<code>🌟Detail  : $AKUN</code>
-<code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domen</code>
-<code>────────────────────</code>
-<i>Notifikasi Via RstoreBOT</i>
-<b>Tele : @kytxz</b>
-"
-curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 clear
 ###########
 IP=$(curl -sS ifconfig.me);
@@ -120,7 +104,23 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
-
+#####BOT-TRX
+END
+<☘️🔥TRX="
+<code>INFO MASKU -Transaksi</code>
+<code>────────────────────</code>
+<b>  ⚠️TRANSAKSI SSH OVPN⚠️      </b>
+<code>────────────────────</code>
+<code>🌟Owner   : $OWNER</code>
+<code>🌟Detail  : $AKUN</code>
+<code>🌟Durasi  : $exp</code>
+<code>🌟Server  : $domen</code>
+<code>────────────────────</code>
+<i>Notifikasi Via RstoreBOT</i>
+<b>Tele : @kytxz</b>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
+clear
 if [[ ! -z "${PID}" ]]; then
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " ${COLBG1}           • SSH PANEL MENU •           ${NC} "
