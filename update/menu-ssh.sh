@@ -39,6 +39,8 @@ echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━�
 echo -e " ${COLBG1}            • SSH PANEL MENU •          ${NC} "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 read -p "   Username : " Login
+read -p "   Owner     : " OWNER
+read -p "Input Id tele anda (-1001911868043) : " CHATIDGC
 CEKFILE=/etc/xray/ssh.txt
 if [ -f "$CEKFILE" ]; then
 file001="OK"
