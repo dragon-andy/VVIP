@@ -97,6 +97,13 @@ slkey=$(cat /etc/slowdns/server.pub)
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
 OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
+
+sleep 1
+clear
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
+PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
@@ -112,13 +119,6 @@ TRX="
 <b>Tele : @Andyyuda</b>
 "
 curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
-sleep 1
-clear
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
-exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
-echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
-
 clear
 if [[ ! -z "${PID}" ]]; then
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
