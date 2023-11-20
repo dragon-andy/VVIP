@@ -263,7 +263,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
-<b>  ⚠️TRANSAKSI AKUN SSH WS⚠️      </b>
+<b>  ⚠️TRANSAKSI AKUN VMESS⚠️      </b>
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
 <code>🌟Detail  : $AKUN</code>
