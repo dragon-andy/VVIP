@@ -111,9 +111,10 @@ TRX="
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
 <code>🌟Detail  : $AKUN</code>
-<code>🌟Durasi  : $masaaktif</code>
+<code>🌟Durasi  : $exp</code>
 <code>🌟Server  : $domen</code>
-<code>SELAMAT MENIKMATI</code>
+<code>⚠️SELAMAT MENIKMATI⚠️</code>
+<code>⚠️Script By Andyyuda⚠️</code>
 <code>────────────────────</code>
 <i>Notifikasi Via KLMPK-BOT</i>
 <b>Tele : @Andyyuda</b>
