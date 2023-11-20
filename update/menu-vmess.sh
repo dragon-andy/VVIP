@@ -256,9 +256,10 @@ vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
-TIMES="10"
+TIMES="1"
 CHATIDGC="5736569839"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
