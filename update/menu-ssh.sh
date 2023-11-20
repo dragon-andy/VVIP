@@ -91,6 +91,7 @@ TRX="
 <code>🌟Detail  : $AKUN</code>
 <code>🌟Durasi  : $exp</code>
 <code>🌟Server  : $domain</code>
+<code>SELAMAT MENIKMATI</code>
 <code>────────────────────</code>
 <i>Notifikasi Via KLMPK-BOT</i>
 <b>Tele : @Andyyuda</b>
