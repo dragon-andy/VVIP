@@ -104,8 +104,8 @@ TRX="
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
 <code>🌟Detail  : $AKUN</code>
-<code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domain</code>
+<code>🌟Durasi  : $masaaktif</code>
+<code>🌟Server  : $domen</code>
 <code>SELAMAT MENIKMATI</code>
 <code>────────────────────</code>
 <i>Notifikasi Via KLMPK-BOT</i>
