@@ -82,20 +82,18 @@ echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu-ssh
 fi
-#####BOT-TRX
-END
-<☘️🔥TRX="
+TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
-<b>  ⚠️TRANSAKSI SSH OVPN⚠️      </b>
+<b>  ⚠️TRANSAKSI VMESS WS⚠️      </b>
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
 <code>🌟Detail  : $AKUN</code>
 <code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domen</code>
+<code>🌟Server  : $domain</code>
 <code>────────────────────</code>
-<i>Notifikasi Via RstoreBOT</i>
-<b>Tele : @kytxz</b>
+<i>Notifikasi Via KLMPK-BOT</i>
+<b>Tele : @Andyyuda</b>
 "
 curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 clear
