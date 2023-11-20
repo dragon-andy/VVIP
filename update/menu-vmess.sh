@@ -253,7 +253,20 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 END
-
+TRX="
+<code>INFO MASKU -Transaksi</code>
+<code>────────────────────</code>
+<b>  ⚠️TRANSAKSI VMESS WS⚠️      </b>
+<code>────────────────────</code>
+<code>🌟Owner   : $OWNER</code>
+<code>🌟Detail  : $AKUN</code>
+<code>🌟Durasi  : $exp</code>
+<code>🌟Server  : $domain</code>
+<code>────────────────────</code>
+<i>Notifikasi Via KLMPK-BOT</i>
+<b>Tele : @Andyyuda</b>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 clear
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
