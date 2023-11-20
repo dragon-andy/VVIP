@@ -105,7 +105,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="Project VPN TUNNELING 
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
-<b>  ⚠️TRANSAKSI VMESS WS⚠️      </b>
+<b>  ⚠️TRANSAKSI AKUN SSH WS⚠️      </b>
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
 <code>🌟Detail  : $AKUN</code>
