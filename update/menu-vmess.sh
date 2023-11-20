@@ -260,12 +260,14 @@ END
 TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
-<b>  ⚠️TRANSAKSI VMESS WS⚠️      </b>
+<b>  ⚠️TRANSAKSI AKUN SSH WS⚠️      </b>
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
 <code>🌟Detail  : $AKUN</code>
 <code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domain</code>
+<code>🌟Server  : $domen</code>
+<code>⚠️SELAMAT MENIKMATI⚠️</code>
+<code>⚠️Script By Andyyuda⚠️</code>
 <code>────────────────────</code>
 <i>Notifikasi Via KLMPK-BOT</i>
 <b>Tele : @Andyyuda</b>
