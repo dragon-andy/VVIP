@@ -82,21 +82,6 @@ echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu-ssh
 fi
-TRX="
-<code>INFO MASKU -Transaksi</code>
-<code>────────────────────</code>
-<b>  ⚠️TRANSAKSI VMESS WS⚠️      </b>
-<code>────────────────────</code>
-<code>🌟Owner   : $OWNER</code>
-<code>🌟Detail  : $AKUN</code>
-<code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domain</code>
-<code>SELAMAT MENIKMATI</code>
-<code>────────────────────</code>
-<i>Notifikasi Via KLMPK-BOT</i>
-<b>Tele : @Andyyuda</b>
-"
-curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 clear
 ###########
 IP=$(curl -sS ifconfig.me);
@@ -112,7 +97,21 @@ slkey=$(cat /etc/slowdns/server.pub)
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
 OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
-
+TRX="
+<code>INFO MASKU -Transaksi</code>
+<code>────────────────────</code>
+<b>  ⚠️TRANSAKSI VMESS WS⚠️      </b>
+<code>────────────────────</code>
+<code>🌟Owner   : $OWNER</code>
+<code>🌟Detail  : $AKUN</code>
+<code>🌟Durasi  : $exp</code>
+<code>🌟Server  : $domain</code>
+<code>SELAMAT MENIKMATI</code>
+<code>────────────────────</code>
+<i>Notifikasi Via KLMPK-BOT</i>
+<b>Tele : @Andyyuda</b>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 sleep 1
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
@@ -193,23 +192,6 @@ echo -e "GET / HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "\033[1;36m**━━━━━━━━━━━━━━━━━━━━━━━━━━**\033[0m"
 echo -e "${CYAN}       Script By Andyyuda" 
 echo -e "\033[1;36m**━━━━━━━━━━━━━━━━━━━━━━━━━━**\033[0m"
-
-#####BOT-TRX
-END
-<☘️🔥TRX="
-<code>INFO MASKU -Transaksi</code>
-<code>────────────────────</code>
-<b>  ⚠️TRANSAKSI SSH OVPN⚠️      </b>
-<code>────────────────────</code>
-<code>🌟Owner   : $OWNER</code>
-<code>🌟Detail  : $AKUN</code>
-<code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domen</code>
-<code>────────────────────</code>
-<i>Notifikasi Via RstoreBOT</i>
-<b>Tele : @kytxz</b>
-"
-curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 fi
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
