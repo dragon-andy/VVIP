@@ -256,7 +256,6 @@ vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
-END
 TRX="
 <code>INFO MASKU -Transaksi</code>
 <code>────────────────────</code>
