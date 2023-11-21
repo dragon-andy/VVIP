@@ -3,10 +3,16 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
+AKUN="AKUN VMESS"
+TIMES="10"
+CHATIDGC="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
-RED="\033[0;31m"
+RED="\033[0;31m" 
 COLOR1="\033[1;36m"
-COLBG1="\e[1;97;101m"                 
+COLBG1="\e[1;97;101m"                                  
 ###########- END COLOR CODE -##########
 
 function cekvless(){
@@ -164,6 +170,8 @@ tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "  Input Username : " -e user
+ 	        read -p "   Nama Buyer     : " OWNER
+CHATIDGC="5736569839"
         if [ -z $user ]; then
 echo -e " [Error] Username cannot be empty "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -195,6 +203,27 @@ vlesslink1="vless://${uuid}@${domain}:$tls?path=/vlessws&security=tls&encryption
 vlesslink2="vless://${uuid}@${domain}:$none?path=/vlessws&encryption=none&type=ws#${user}"
 vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 systemctl restart xray
+TIMES="1"
+CHATIDGC="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+TRX="
+<code>INFO MASKU -Transaksi</code>
+<code>────────────────────</code>
+<b>  ⚠️TRANSAKSI AKUN VLESS⚠️      </b>
+<code>────────────────────</code>
+<code>🌟Owner   : $OWNER</code>
+<code>🌟Detail  : $AKUN</code>
+<code>🌟Durasi  : $exp</code>
+<code>🌟Server  : $domain</code>
+<code>  █▓▒▒░░░KLMPK░░░▒▒▓█  </code>
+<code>⚠️SELAMAT MENIKMATI⚠️</code>
+<code>⚠️Script By Andyyuda⚠️</code>
+<code>────────────────────</code>
+<i>Notifikasi Via KLMPK-BOT</i>
+<b>Tele : @Andyyuda</b>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " ${COLBG1}          • CREATE VLESS USER •         ${NC} "
