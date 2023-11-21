@@ -5,7 +5,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 AKUN="AKUN VMESS"
 TIMES="10"
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
@@ -182,7 +182,7 @@ tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 read -rp "   Input Username : " -e user
 read -p "   Nama Buyer     : " OWNER
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 if [ -z $user ]; then
 echo -e "   [Error] Username cannot be empty "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -215,7 +215,7 @@ systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${domain}#${user}"
 trojanlink="trojan://${uuid}@bug.com:${tr}?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 TIMES="1"
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
