@@ -207,6 +207,8 @@ echo -e "  ${CYAN}[04]${NC} • ${RED}[${NC}${PURPLE} TROJAN MENU ${NC}${RED}]${
 echo -e "  ${CYAN}[05]${NC} • ${RED}[${NC}${PURPLE} SSWS MENU ${NC}${RED}]${NC}            ${CYAN}[12]${NC} • ${RED}[${NC}${PURPLE} CERT XRAY ${NC}${RED}]${NC}    "
 echo -e "  ${CYAN}[06]${NC} • ${RED}[${NC}${PURPLE} UPDATE MENU${NC}${RED}]${NC}           ${CYAN}[13]${NC} • ${RED}[${NC}${PURPLE} AUTO REBOOT ${NC}${RED}]${NC}     "
 echo -e "  ${CYAN}[07]${NC} • ${RED}[${NC}${PURPLE} INSTALL UDP ${NC}${RED}]${NC}          ${CYAN}[14]${NC} • ${RED}[${NC}${PURPLE} MENU BOT ${NC}${RED}]${NC} "
+
+echo -e "  ${CYAN}[99]${NC} • ${RED}[${NC}${PURPLE} BOT NOTIF ${NC}${RED}]${NC} "
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "              << SCRIPT MULTIPORT TUNNELING >>                    \E[0m"
 echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
@@ -227,6 +229,7 @@ case $opt in
 12) clear ; crtxray ;;
 13) clear ; auto-reboot ;;
 14) clear ; wget ${BOT}kontol.sh && chmod +x kontol.sh && ./kontol.sh ;;
+99) clear ; cupu ;;
 999) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
