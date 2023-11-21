@@ -3,10 +3,17 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
+AKUN="AKUN VMESS"
+TIMES="10"
+CHATIDGC="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m" 
 COLOR1="\033[1;36m"
-COLBG1="\e[1;97;101m"                    
+COLBG1="\e[1;97;101m"                      
+###########- END COLOR CODE -##########        
 # // Export Color & Information
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
@@ -174,6 +181,7 @@ echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━�
 tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 read -rp "   Input Username : " -e user
+read -p "   Nama Buyer     : " OWNER
 if [ -z $user ]; then
 echo -e "   [Error] Username cannot be empty "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -205,6 +213,27 @@ sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
 systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${domain}#${user}"
 trojanlink="trojan://${uuid}@bug.com:${tr}?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
+TIMES="1"
+CHATIDGC="5736569839"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+TRX="
+<code>INFO MASKU -Transaksi</code>
+<code>────────────────────</code>
+<b>  ⚠️TRANSAKSI AKUN TROJAN⚠️      </b>
+<code>────────────────────</code>
+<code>🌟Owner   : $OWNER</code>
+<code>🌟Detail  : $AKUN</code>
+<code>🌟Durasi  : $exp</code>
+<code>🌟Server  : $domain</code>
+<code>  █▓▒▒░░░KLMPK░░░▒▒▓█  </code>
+<code>⚠️SELAMAT MENIKMATI⚠️</code>
+<code>⚠️Script By Andyyuda⚠️</code>
+<code>────────────────────</code>
+<i>Notifikasi Via KLMPK-BOT</i>
+<b>Tele : @Andyyuda</b>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
 clear
 END
 clear
