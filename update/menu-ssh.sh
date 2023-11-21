@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 AKUN="AKUN SSH"
 TIMES="10"
-CHATID="-4039554826"
+CHATID="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
@@ -40,7 +40,7 @@ echo -e " ${COLBG1}            • SSH PANEL MENU •          ${NC} "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 read -p "   Username : " Login
 read -p "   Owner     : " OWNER
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 CEKFILE=/etc/xray/ssh.txt
 if [ -f "$CEKFILE" ]; then
 file001="OK"
@@ -105,7 +105,7 @@ exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 TIMES="1"
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
