@@ -5,7 +5,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 AKUN="AKUN VLESS"
 TIMES="10"
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
@@ -171,7 +171,7 @@ none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ /
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "  Input Username : " -e user
  	        read -p "   Nama Buyer     : " OWNER
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
         if [ -z $user ]; then
 echo -e " [Error] Username cannot be empty "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -204,7 +204,7 @@ vlesslink2="vless://${uuid}@${domain}:$none?path=/vlessws&encryption=none&type=w
 vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 systemctl restart xray
 TIMES="1"
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
