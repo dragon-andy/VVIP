@@ -5,7 +5,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 AKUN="AKUN VMESS"
 TIMES="10"
-CHATIDGC="5736569839"
+CHATIDGC="-4039554826"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
@@ -214,7 +214,7 @@ systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${domain}#${user}"
 trojanlink="trojan://${uuid}@bug.com:${tr}?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 TIMES="1"
-CHATIDGC="5736569839"
+CHATIDGC="-4039554826"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
