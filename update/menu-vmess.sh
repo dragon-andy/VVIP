@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 AKUN="AKUN VMESS"
 TIMES="10"
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
@@ -170,7 +170,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 read -rp "   Input Username : " -e user
 read -p "   Nama Buyer     : " OWNER
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
       
 if [ -z $user ]; then
 echo -e " [Error] Username cannot be empty "
@@ -257,7 +257,7 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 TIMES="1"
-CHATIDGC="-4039554826"
+CHATIDGC="-1002015199453"
 KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TRX="
@@ -269,7 +269,6 @@ TRX="
 <code>🌟Detail  : $AKUN</code>
 <code>🌟Durasi  : $exp</code>
 <code>🌟Server  : $domain</code>
-<code>  █▓▒▒░░░KLMPK░░░▒▒▓█  </code>
 <code>⚠️SELAMAT MENIKMATI⚠️</code>
 <code>⚠️Script By Andyyuda⚠️</code>
 <code>────────────────────</code>
