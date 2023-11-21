@@ -182,6 +182,7 @@ tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 read -rp "   Input Username : " -e user
 read -p "   Nama Buyer     : " OWNER
+CHATIDGC="-4039554826"
 if [ -z $user ]; then
 echo -e "   [Error] Username cannot be empty "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
