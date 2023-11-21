@@ -29,6 +29,7 @@ wget -q -O /usr/bin/banned "https://raw.githubusercontent.com/dragon-andy/VVIP/i
 wget -q -O /usr/bin/userlimit "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/userlimit.sh" && chmod +x /usr/bin/userlimit
 wget -q -O /usr/bin/userlimitssh "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/userlimitssh.sh" && chmod +x /usr/bin/userlimitssh
 wget -q -O /usr/bin/userexpired "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/userexpired.sh" && chmod +x /usr/bin/userexpired
+wget -q -O /usr/bin/cupu "https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/bash.sh.sh" && chmod +x /usr/bin/cupu
 echo -e " [INFO] Update Successfully"
 sleep 2
 rm -f update.sh
