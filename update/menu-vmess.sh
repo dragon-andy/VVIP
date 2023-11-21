@@ -169,7 +169,7 @@ none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ /
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 read -rp "   Input Username : " -e user
-read -p "   Owner     : " OWNER
+read -p "   Nama Buyer     : " OWNER
 CHATIDGC="5736569839"
       
 if [ -z $user ]; then
