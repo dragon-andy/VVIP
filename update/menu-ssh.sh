@@ -645,6 +645,59 @@ echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ssh
 }
+function chngelimit() {
+    clear
+    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC" | lolcat
+    echo -e "$COLBG1         Chnge SSH OVPN Account          \E[0m"
+    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC" | lolcat
+    NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/ssh/.ssh.db")
+    if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
+        echo ""
+        echo "   You have no existing clients!"
+        echo ""
+        exit 0
+    fi
+
+    until [[ $ipvps =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '1' ]]; do
+        echo -e " "
+        read -rp "Input Username : " user
+        CLIENT_EXISTS=$(grep -w $user /etc/ssh/.ssh.db | wc -l)
+
+        if [[ ${CLIENT_EXISTS} == '0' ]]; then
+            echo "No customer name available"
+        else
+            sec=3
+            spinner=(⣻ ⢿ ⡿ ⣟ ⣯ ⣷)
+            while [ $sec -gt 0 ]; do
+                echo -ne "\033[0;31m ${spinner[sec]} Setting up a Premium Account $sec seconds...\r"
+                sleep 1
+                sec=$(($sec - 1))
+            done
+            clear
+            echo -e "${COLOR1}INPUT DEPENDECIES ACCOUNT $user ${NC}"
+
+            until [[ $iplim =~ ^[0-9]+$ ]]; do
+                read -p "Limit User (IP): " iplim
+            done
+
+            if [ -z ${iplim} ]; then
+                iplim="0"
+            fi
+
+            if [[ ${c} != "0" ]]; then
+                echo "${iplim}" >/etc/ssh/${user}
+            fi
+            clear
+            echo "-----------------------------------------------"
+            echo -e "Chnge Vmess Account Username ${grenbo}$user${NC} Successfully"
+            echo -e "limit Login SSH OVPN IP $iplim Device"
+            echo "-----------------------------------------------"
+            echo ""
+            exit
+        fi
+    done
+
+}
 function autokill(){
 clear
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
