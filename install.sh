@@ -352,6 +352,12 @@ wget https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/websocket/nontls.sh
 clear
 wget https://raw.githubusercontent.com/dragon-andy/VVIP/main/ssh/notif.sh;chmod +x notif.sh;./notif.sh
 clear
+echo -e "$green[INFO]$NC Install limit!"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green       Install Limit Xray               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+wget -q https://raw.githubusercontent.com/rehanvip/wlx/main/limit/limit.sh;chmod +x limit.sh;./limit.sh
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
 wget https://raw.githubusercontent.com/dragon-andy/vvip/ipuk/update/update.sh && chmod +x update.sh && ./update.sh
