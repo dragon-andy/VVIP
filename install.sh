@@ -466,6 +466,8 @@ echo "" | tee -a log-install.txt
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm -f insshws.sh 
+rm -f limit.sh 
+rm -f notif.sh 
 rm -f update.sh
 rm -f install.sh
 rm -f nontls.sh
