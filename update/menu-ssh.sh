@@ -114,6 +114,7 @@ TRX="
 <b>  ⚠️TRANSAKSI AKUN SSH WS⚠️      </b>
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
+<code>🌟Member  : $login</code>
 <code>🌟Detail  : $AKUN</code>
 <code>🌟Durasi  : $exp</code>
 <code>🌟Server  : $domen</code>
