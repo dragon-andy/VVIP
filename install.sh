@@ -245,8 +245,8 @@ clear
     fi
 	echo -e "${BGreen}Done!${NC}"
     sleep 2
-CHATID="-1001966360036"
-KEY="6307367714:AAG_Gae1CEjB-BDTYLzHSb89kbmLxzln7mk"
+CHATID="-1002015199453"
+KEY="6409879237:AAE1vPwbqfiWmRkV-AbCa6-tepM5w5FTGz0"
 WKT="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="Project VPN TUNNELING 
@@ -316,15 +316,6 @@ echo -e "$green[INFO]$NC Install WEBSOCKET!"
 wget https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 wget https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
-clear
-wget https://raw.githubusercontent.com/dragon-andy/VVIP/main/ssh/notif.sh;chmod +x notif.sh;./notif.sh
-clear
-echo -e "$green[INFO]$NC Install limit!"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green       Install Limit Xray               $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
-wget -q https://raw.githubusercontent.com/rehanvip/wlx/main/limit/limit.sh;chmod +x limit.sh;./limit.sh
 clear
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
@@ -433,8 +424,6 @@ echo "" | tee -a log-install.txt
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm -f insshws.sh 
-rm -f limit.sh 
-rm -f notif.sh 
 rm -f update.sh
 rm -f install.sh
 rm -f nontls.sh
