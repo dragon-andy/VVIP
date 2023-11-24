@@ -266,6 +266,7 @@ TRX="
 <b>  ⚠️TRANSAKSI AKUN VMESS⚠️      </b>
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
+<code>🌟Member  : $user</code>
 <code>🌟Detail  : $AKUN</code>
 <code>🌟Durasi  : $exp</code>
 <code>🌟Server  : $domain</code>
