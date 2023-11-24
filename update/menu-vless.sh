@@ -213,10 +213,10 @@ TRX="
 <b>  ⚠️TRANSAKSI AKUN VLESS⚠️      </b>
 <code>────────────────────</code>
 <code>🌟Owner   : $OWNER</code>
+<code>🌟Member  : $user</code>
 <code>🌟Detail  : $AKUN</code>
 <code>🌟Durasi  : $exp</code>
 <code>🌟Server  : $domain</code>
-<code>  █▓▒▒░░░KLMPK░░░▒▒▓█  </code>
 <code>⚠️SELAMAT MENIKMATI⚠️</code>
 <code>⚠️Script By Andyyuda⚠️</code>
 <code>────────────────────</code>
