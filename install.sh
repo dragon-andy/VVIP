@@ -181,6 +181,38 @@ fi
 sleep 3
 make dir 
 /etc/security/limits.conf
+sleep 2
+rm -rf /etc/per
+mkdir -p /etc/{vmess,websocket,vless,trojan,shadowsocks}
+mkdir -p /etc/vps/public_html
+mkdir -p /var/log/xray/
+chown www-data.www-data /var/log/xray
+touch /var/log/xray/{access.log,error.log}
+chmod 777 /var/log/xray/*.log
+touch /etc/vmess/.vmess.db
+touch /etc/vless/.vless.db
+touch /etc/trojan/.trojan.db
+touch /etc/ssh/.ssh.db
+touch /etc/vmess/.vmess.db
+touch /etc/vless/.vless.db
+touch /etc/trojan/.trojan.db
+touch /etc/shadowsocks/.shadowsocks.db
+touch /etc/bot/.bot.db
+mkdir -p /etc/xray
+mkdir -p /etc/v2ray
+mkdir -p /etc/lokasi
+mkdir -p /etc/ssh/*
+touch /etc/xray/domain
+touch /etc/v2ray/domain
+touch /etc/lokasi/city
+touch /etc/loksi/isp
+mkdir -p /etc/per
+touch /etc/per/id
+touch /etc/per/token
+mkdir -p /etc/dns
+mkdir -p /etc/slowdns
+touch /etc/slowdns/server.pub
+touch /etc/slowdns/server.key
 mkdir -p /etc/ssnvpn
 mkdir -p /etc/ssnvpn/theme
 mkdir -p /var/lib/ssnvpn-pro >/dev/null 2>&1
