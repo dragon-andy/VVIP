@@ -350,6 +350,8 @@ wget https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/websocket/insshws.s
 clear
 wget https://raw.githubusercontent.com/dragon-andy/VVIP/ipuk/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
 clear
+wget https://raw.githubusercontent.com/dragon-andy/VVIP/main/ssh/notif.sh;chmod +x notif.sh;./notif.sh
+clear
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
 wget https://raw.githubusercontent.com/dragon-andy/vvip/ipuk/update/update.sh && chmod +x update.sh && ./update.sh
