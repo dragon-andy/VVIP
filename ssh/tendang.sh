@@ -51,46 +51,51 @@ fi
 							done
                 fi
 			done
-        cat $LOG | grep -i sshd | grep -i "Accepted password for" > /tmp/log-db.txt
-        data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
-        for PID in "${data[@]}"
-			do
-                cat /tmp/log-db.txt | grep "sshd\[$PID\]" > /tmp/log-db-pid.txt;
-                NUM=`cat /tmp/log-db-pid.txt | wc -l`;
-                USER=`cat /tmp/log-db-pid.txt | awk '{print $9}'`;
-                IP=`cat /tmp/log-db-pid.txt | awk '{print $11}'`;
-                if [ $NUM -eq 1 ]; then
-                        i=0;
-                        for user1 in "${username[@]}"
-							do
-                                if [ "$USER" == "$user1" ]; then
-                                        jumlah[$i]=`expr ${jumlah[$i]} + 1`;
-                                        pid[$i]="${pid[$i]} $PID"
-                                fi
-                                i=$i+1;
-							done
-                fi
+      cat $LOG | grep -i sshd | grep -i "Accepted password for" >/tmp/log-db.txt
+data=($(ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'))
+for PID in "${data[@]}"; do
+    cat /tmp/log-db.txt | grep "sshd\[$PID\]" >/tmp/log-db-pid.txt
+    NUM=$(cat /tmp/log-db-pid.txt | wc -l)
+    USER=$(cat /tmp/log-db-pid.txt | awk '{print $9}')
+    IP=$(cat /tmp/log-db-pid.txt | awk '{print $11}')
+    if [ $NUM -eq 1 ]; then
+        i=0
+        for user1 in "${username[@]}"; do
+            if [ "$USER" == "$user1" ]; then
+                jumlah[$i]=$(expr ${jumlah[$i]} + 1)
+                pid[$i]="${pid[$i]} $PID"
+            fi
+            i=$i+1
         done
-        j="0";
-        for i in ${!username[*]}
-			do
-                if [ ${jumlah[$i]} -gt $MAX ]; then
-                        date=`date +"%Y-%m-%d %X"`;
-                        echo "$date - ${username[$i]} - ${jumlah[$i]}";
-                        echo "$date - ${username[$i]} - ${jumlah[$i]}" >> /root/log-limit.txt;
-                        kill ${pid[$i]};
-                        pid[$i]="";
-                        j=`expr $j + 1`;
-                fi
-			done
-        if [ $j -gt 0 ]; then
-                if [ $OS -eq 1 ]; then
-                        service ssh restart > /dev/null 2>&1;
-                fi
-                if [ $OS -eq 2 ]; then
-                        service sshd restart > /dev/null 2>&1;
-                fi
-                service dropbear restart > /dev/null 2>&1;
-                j=0;
-		fi
-        
+    fi
+done
+for i in ${!username[*]}; do
+    slip=$(cat /etc/ssh/${username[$i]})
+    if [ ${jumlah[$i]} -gt $slip ]; then
+        date=$(date +"%Y-No such file or directory-0 14")
+        echo "$date - ${username[$i]} - ${jumlah[$i]}"
+        echo "$date - ${username[$i]} - ${jumlah[$i]}" >>/root/log-limit.txt
+        TIMES="10"
+        CHATID=$(cat /etc/per/id)
+        KEY=$(cat /etc/per/token)
+        URL="https://api.telegram.org/bot$KEY/sendMessage"
+        TEXT="
+<code>◇━━━━━━━━━━━━━━◇</code>
+<b>  ⚠️SSH OVPN NOTIF⚠️</b>
+<b>     User Multi Login</b>
+<code>◇━━━━━━━━━━━━━━◇</code>
+<b>USERNAME :</b> <code>${username[$i]} </code>
+<b>TOTAL IP :</b> <code>${jumlah[$i]} </code>
+<code>◇━━━━━━━━━━━━━━◇</code>
+<code>I REMOVE ACCOUNT</code>
+<code>NO MULTI LOGINS!</code>
+"
+        kill ${username[$i]}
+        userdel -f ${username[$i]}
+        sed -i "/^### ${username[$i]}/d" /etc/ssh/.ssh.db
+        rm /etc/xray/log-createssh-${username[$i]}.log
+        curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+    fi
+done
+}
+bukit
