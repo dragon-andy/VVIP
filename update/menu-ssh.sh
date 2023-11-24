@@ -817,7 +817,8 @@ echo -e "\033[1;93m〔⎆〕 ${grenbo}6.${NC} \033[0;36mRenew SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}7.${NC} \033[0;36mCek Member SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}8.${NC} \033[0;36mMullog SSH ${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}9.${NC} \033[0;36mAuto Kill user SSH ${NC}"
-echo -e "\033[1;93m〔⎆〕 ${grenbo}10.${NC} \033[0;36mGo Back Menu${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}10.${NC} \033[0;36mChange Limit ${NC}"
+echo -e "\033[1;93m〔⎆〕 ${grenbo}11.${NC} \033[0;36mGo Back Menu${NC}"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -p " Select menu :  "  opt
@@ -832,7 +833,8 @@ case $opt in
 07 | 7) clear ; memberssh ;;
 08 | 8) clear ; ceklim ;;
 09 | 9) clear ; autokill ;;
-10 | 10) clear ; menu ;;
+10 | 10) clear ; chngelimit ;;
+11 | 11) clear ; menu ;;
 *) clear ; menu-ssh ;;
 esac
 
